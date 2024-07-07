@@ -74,5 +74,49 @@ rosdep update
 
 --------------------------------------------------------------------------------------------------------
 
-## *Installing ROS 2 Foxy!* 🌟
+### *Installing ROS 2 Foxy!* 🌟
 
+*The process is very similar to installing ROS! Following these commands respectively:*
+
+*1. Setting up the sources and adding the keys:*
+
+```
+sudo apt install software-properties-common
+sudo add-apt-repository universe
+
+sudo apt update && sudo apt install curl -y
+sudo curl -sSL https://raw.githubusercontent.com/ros/rosdistro/master/ros.key -o /usr/share/keyrings/ros-archive-keyring.gpg
+
+echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/ros-archive-keyring.gpg] http://packages.ros.org/ros2/ubuntu $(. /etc/os-release && echo $UBUNTU_CODENAME) main" | sudo tee /etc/apt/sources.list.d/ros2.list > /dev/null
+```
+
+*2. Update & upgrade apt!*
+
+```
+sudo apt update
+
+sudo apt upgrade
+```
+
+*3. Install ROS 2 packages:*
+
+```
+sudo apt install ros-foxy-desktop python3-argcomplete
+```
+
+*4. Setup the environments:*
+
+```
+source /opt/ros/foxy/setup.bash
+```
+
+*Note: Because we downloaded ROS before, we might need to be carefull with setup.bash.* ✨
+
+*5. We can run a program to test our installation~*
+
+*Trying the talker program on ROS 2!* 🎃
+
+![7](https://github.com/le9na/ubuntu-ros-setup/assets/90223879/564f9554-69cb-4937-ba37-c7379fa70b8a)
+
+
+*That's it!* 💫
